@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <h1>Votre profile {{app.user}} </h1>
+    <p>
+        <ul>
+            <li>Votre mail : {{ app.user.email }}
+            <li>Votre pseudo : {{ app.user.pseudo }}
+        </ul>
+    </p>
+
+{% endblock %}

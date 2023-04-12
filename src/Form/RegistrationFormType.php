@@ -31,12 +31,26 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('plainPassword', RepeatedType::class, [
+                'mapped' => false,
                 'type' => PasswordType::class,
                 'invalid_message' => 'The password fields must match.',
                 'options' => ['attr' => ['class' => 'password-field']],
                 'required' => true,
                 'first_options'  => ['label' => 'Password'],
                 'second_options' => ['label' => 'Repeat Password'],
+                // 'mapped' => false,
+                // 'attr'=>['autocomplete' => 'new-password'],
+                // 'constraints' => [
+                //     new NotBlank([
+                //         'message'=> 'Please enter a password',
+                //     ]),
+                //     new Length([
+                //         'min' => 6,
+                //         'minMesage' => 'Your password should be at least {{ limit }} characters',
+                //         // max length allowed by Symfony for security reasons
+                //         'max' => 4096,
+                //     ]),
+                // ],
             ])
         ;
     }
